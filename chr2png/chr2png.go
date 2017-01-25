@@ -14,7 +14,6 @@ func main() {
 	}
 
 	chrFilePath := os.Args[1]
-	chrFileBase := path.Base(chrFilePath)
 
 	var pngFilePath string
 
@@ -25,6 +24,7 @@ func main() {
 			printUsage()
 		}
 	} else {
+		chrFileBase := path.Base(chrFilePath)
 		pngFilePath = chrFileBase[:len(chrFileBase)-len(path.Ext(chrFileBase))] + ".png"
 	}
 
