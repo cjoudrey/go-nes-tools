@@ -107,7 +107,7 @@ func convertTileToChr(column int, row int, img image.PalettedImage) ([]byte, err
 			bitPosition := uint(7 - x)
 
 			plane1[y] |= ((colorIndex & 1) << bitPosition)
-			plane2[y] |= ((colorIndex & 2) << bitPosition)
+			plane2[y] |= (((colorIndex & 2) >> 1) << bitPosition)
 		}
 	}
 
